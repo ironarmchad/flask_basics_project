@@ -10,7 +10,10 @@ from flask_bcrypt import Bcrypt
 db = SQLAlchemy()
 bootstrap = Bootstrap()
 login_manager = LoginManager()
+login_manager.login_view = 'authentication.do_the_login'
+login_manager.session_protection = 'strong'
 bcrypt = Bcrypt()
+
 
 def create_app(config_type):  # def, test or prod
 

@@ -29,3 +29,15 @@ class Book(db.Model):
 
     # Relationship
     pub_id = db.Column(db.Integer, db.ForeignKey('publication.id'))
+
+    def __init__(self, title, author, avg_rating, book_format, image, num_pages, pub_id):
+        self.title = title
+        self.author = author
+        self.avg_rating = avg_rating
+        self.format = book_format
+        self.image = image
+        self.num_pages = num_pages
+        self.pub_id = pub_id
+
+    def __repr__(self):
+        return '{} by {}'.format(self.title, self.author)
